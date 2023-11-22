@@ -1,0 +1,8 @@
+@import 'src/assets/styles/mixin.scss';
+
+.layoutContainer{
+   @include flexCenter;
+    width: 100%;
+    height: 100vh;
+    padding: 30px;
+}

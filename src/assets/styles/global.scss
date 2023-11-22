@@ -1,0 +1,38 @@
+
+@import "./font.scss";
+@import "./variables.scss";
+// @import "./mixin.scss";
+html,
+body {
+  direction: rtl;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  margin: 0 auto;
+  min-height: 100vh;
+  font-family: var(--font-default),
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+
+}
+.app{
+  min-block-size: 100vh;
+  width: 100%;
+}
+h1{
+  font-size: var(--text-xLarge);
+}
+h2{
+  font-size: var(--text-medium);
+}
+h3{
+  font-size: var(--text-small);
+  color:var(--text-dark-grey)
+}
+

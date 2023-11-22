@@ -1,7 +1,10 @@
+import { RouterProvider } from "react-router-dom";
+import { mainRouter } from "src/routes/main.route";
+import "src/assets/styles/global.scss";
 function App() {
   return (
-    <div>
-      <h1>App</h1>
+    <div className='app'>
+      <RouterProvider router={mainRouter} />
     </div>
   );
 }
