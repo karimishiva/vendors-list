@@ -14,7 +14,7 @@ function useVendors() {
       };
     }
   );
-  const [getData, { isLoading, data }] = useLazyFetchVendorsQuery();
+  const [getData, { isFetching: isLoading, data }] = useLazyFetchVendorsQuery();
   useEffect(() => {
     page != 0 &&
       getData({
