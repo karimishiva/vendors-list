@@ -1,0 +1,40 @@
+@import 'src/assets/styles/mixin.scss';
+
+.loadingVendor{
+    @include flexCenter(row,_,center,center);
+    &_card{
+        border-radius: 6px;
+        border: 0.5px solid var(--border-grey);
+        box-shadow: var(--card-shadow-2);
+        min-width: min(100% - 4px, 260px);
+        max-width: 567px;
+        width: calc(100% - 32px);
+        height: 245px;
+        margin-bottom: 16px;
+        &_image{
+            height: 50%;
+            animation: skeleton-loading 1s linear infinite alternate;
+
+        }
+        &_text{
+            height: 50%;
+            @include flexCenter(column,8px,_,unset);
+            padding: 20px 16px 16px 16px;
+            &_title{
+                animation: skeleton-loading 1s linear infinite alternate;
+                width: 160px;
+                height: 21px;
+            }
+        }
+    }
+}
+
+  
+  @keyframes skeleton-loading {
+    0% {
+      background-color: var(--bg-skeleton-1);
+    }
+    100% {
+      background-color: var(--bg-skeleton-2);
+    }
+  }
