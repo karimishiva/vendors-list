@@ -1,27 +1,25 @@
 import { Key } from "react";
-import { useFetchVendorsQuery } from "src/store";
-import { VendorsT, VendorsListState } from "src/types/types";
-import { useSelector } from "react-redux";
+import { VendorsT } from "src/types/types";
+import useVendors from "src/hooks/useVendors";
+import c from "./vendorsList.module.scss";
+import VendorCard from "src/components/vendors/vendorCard/VendorCard";
 const VendorsList = () => {
-  const { data } = useFetchVendorsQuery({
-    page: 0,
-    page_size: 10,
-    lat: 35.754,
-    long: 51.328,
-  });
-  const vendors = useSelector(
-    (state: { vendorsList: VendorsListState }) => state.vendorsList.vendors
-  );
+  const { data, vendors } = useVendors();
+
   return (
-    <main>
-      <h1>{data?.data?.count}</h1>
-      {vendors?.map((itm: VendorsT, index: Key) => {
-        return (
-          <div key={index}>
-            {itm.type === "VENDOR" && itm?.data?.description}
-          </div>
-        );
-      })}
+    <main className={c.vendorsList}>
+      <h2
+        className={c.vendorsList_openVendors}
+      >{`${data?.data?.open_count} فروشنده باز `}</h2>
+      <div className={c.vendorsList_container}>
+        {vendors?.map((itm: VendorsT, index: Key) => {
+          return (
+            itm.type === "VENDOR" && (
+              <VendorCard key={index} vendor={itm?.data} />
+            )
+          );
+        })}
+      </div>
     </main>
   );
 };

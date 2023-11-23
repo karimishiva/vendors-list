@@ -39,4 +39,5 @@ const vendorsListSlice = createSlice({
 });
 
 export const vendorsListReducer = vendorsListSlice.reducer;
-export const { changePageSize, changeGeoLocation } = vendorsListSlice.actions;
+export const { changePageSize, changeGeoLocation, changePage } =
+  vendorsListSlice.actions;

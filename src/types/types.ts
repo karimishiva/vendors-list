@@ -23,4 +23,7 @@ export interface VendorT {
   rate: number;
   rating: number;
   voteCount: number;
+  deliveryFee: number;
+  best_coupon?: string;
+  menuUrl: string;
 }

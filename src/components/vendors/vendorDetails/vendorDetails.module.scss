@@ -1,0 +1,14 @@
+@import 'src/assets/styles/mixin.scss';
+.vendorDetails{
+    @include flexCenter(column,8px,_,unset);
+    &_description{
+        font-size: var(--text-xSmall);
+    }
+    &_price{
+        font-size: var(--text-xSmall);
+        @include flexCenter(row,8px,_,_);
+        &_caption{
+            color:var(--text-grey);
+        }
+    }
+}

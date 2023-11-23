@@ -1,0 +1,15 @@
+@import 'src/assets/styles/mixin.scss';
+
+.vendorSurvey{
+    @include flexCenter(row,8px,space-between);
+    font-size: var(--text-xSmall);
+    &_count{
+        color:var(--text-grey);
+    }
+    &_rate{
+        @include flexCenter(row,_,flex-start,center);
+        padding: 2px 4px 2px 2px;
+        border-radius: 4px;
+        
+    }
+}

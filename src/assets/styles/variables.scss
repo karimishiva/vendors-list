@@ -1,13 +1,37 @@
 :root {
     //BACKGROUNDS
-    --bg-main: #fff;
+    --bg-white: #fff;
     --bg-danger: #ff0000;
     --bg-light-pink: rgba(254,247,221,1);
     --bg-pink:rgba(255, 0, 166,1);
+    --bg-shadow: rgba(0, 0, 0, 0.1);
+    --bg-rate-45: rgb(63, 126, 0,0.1);
+    --bg-rate-40: rgba(91, 168, 57,0.1);
+    --bg-rate-35: rgba(154, 205, 50,0.1);
+    --bg-rate-30: rgba(205, 214, 20,0.1);
+    --bg-rate-25: rgba(255, 186, 0,0.1);
+    --bg-rate-20: rgba(255, 120, 0,0.1);
+    --bg-rate-15: rgba(255, 39, 23,0.1);
+    --bg-rate-10: rgba(193, 9, 20,0.1);
+    // BORDER
+    --border-grey:#e6e6e6;
+
+    // SHADOWS
+    --card-shadow-2:  0 2px 12px 0 var(--bg-shadow);
+    --card-shadow-3:  0 2px 6px 0 var(--bg-shadow);
     //TEXTS
     --text-white:#ffffff;
     --text-black: #000000;
-    --text-grey: #c7c7c7;
+    --text-grey: #a3a3a3;
+    --text-green:#22a958;
+    --text-rate-45: #3f7e00;
+    --text-rate-40: #5ba839;
+    --text-rate-35: #9acd32;
+    --text-rate-30: #cdd614;
+    --text-rate-25: #ffba00;
+    --text-rate-20: #ff7800;
+    --text-rate-15: #ff2717;
+    --text-rate-10: #c10914;
     //TYPOGRAPHY
     --text-xSmall: 12px;
     --text-small: 14px;

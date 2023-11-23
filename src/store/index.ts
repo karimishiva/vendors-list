@@ -5,6 +5,7 @@ import {
   vendorsListReducer,
   changePageSize,
   changeGeoLocation,
+  changePage,
 } from "./slices/vendorList";
 
 export const store = configureStore({
@@ -20,4 +21,4 @@ export const store = configureStore({
 setupListeners(store.dispatch);
 
 export { useFetchVendorsQuery } from "./apis/vendorsApi";
-export { changePageSize, changeGeoLocation };
+export { changePageSize, changePage, changeGeoLocation };

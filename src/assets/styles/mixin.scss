@@ -1,7 +1,7 @@
-@mixin flexCenter($dir: "row",$gap:null) {
+@mixin flexCenter($dir: row,$gap:null,$justify:center,$align:center) {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: $justify;
+    align-items: $align;
     gap:$gap;
     flex-direction: $dir;
   }
