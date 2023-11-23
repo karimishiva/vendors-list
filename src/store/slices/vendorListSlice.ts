@@ -4,7 +4,7 @@ import { vendorsApi } from "../apis/vendorsApi";
 
 const initialState = {
   vendors: [],
-  page: 0,
+  page: 1,
   page_size: 10,
   lat: 35.754,
   long: 51.328,

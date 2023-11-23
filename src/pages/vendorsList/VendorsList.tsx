@@ -1,38 +1,50 @@
-import { VendorsT } from "src/types/types";
-import useVendors from "src/hooks/useVendors";
 import c from "./vendorsList.module.scss";
-import VendorCard from "src/components/vendors/vendorCard/VendorCard";
-import VendorLoading from "src/components/vendors/vendorLoading/VendorLoading";
+import AutoSizer from "react-virtualized-auto-sizer";
+import { FixedSizeList } from "react-window";
+import VirtualList from "src/components/virtualList/VirtualList";
+import useVendors from "src/hooks/useVendors";
 import clsx from "clsx";
 import { BrandLogo } from "src/assets/icons";
+import VendorLoading from "src/components/vendors/vendorLoading/VendorLoading";
 const VendorsList = () => {
-  const { data, vendors, loadingRef, isLoading } = useVendors();
-
+  const { vendors, isLoading, data } = useVendors();
   return (
     <main className={c.vendorsList}>
       <div
-        className={clsx(c.vendorsList_openVendors, isLoading ? "skeleton" : "")}
+        className={clsx(
+          c.vendorsList_openVendors,
+          !data?.data?.count ? "skeleton" : ""
+        )}
       >
-        {!isLoading && data?.data?.open_count && (
+        {data?.data?.count && (
           <>
-            <h2>{`${data?.data?.open_count} فروشنده ی  باز `}</h2>
+            <h2>{`${data?.data?.count} فروشنده ی  باز `}</h2>
             <BrandLogo height='36px' />
           </>
         )}
       </div>
-
-      <div className={c.vendorsList_container}>
-        {vendors?.map((itm: VendorsT, index: number) => {
-          return (
-            itm.type === "VENDOR" && (
-              <VendorCard key={index} vendor={itm?.data} />
-            )
-          );
-        })}
-        {isLoading &&
-          [...new Array(9)].map((_, index) => <VendorLoading key={index} />)}
-        <VendorLoading ref={loadingRef} />
-      </div>
+      {isLoading && vendors.length === 0 ? (
+        <>
+          {[...new Array(9)].map((_, index) => (
+            <VendorLoading key={index} />
+          ))}
+        </>
+      ) : (
+        <AutoSizer>
+          {({ height, width }: { height: number; width: number }) => (
+            <FixedSizeList
+              width={width}
+              height={height}
+              itemCount={vendors.length + 1}
+              direction='rtl'
+              itemSize={240}
+              itemData={vendors}
+            >
+              {VirtualList}
+            </FixedSizeList>
+          )}
+        </AutoSizer>
+      )}
     </main>
   );
 };
