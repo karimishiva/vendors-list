@@ -1,11 +1,17 @@
 @import 'src/assets/styles/mixin.scss';
-.card{
+.vendor{
+    @include flexCenter(row,_,center);
+    .card{
     border-radius: 6px;
     background-color: var(--bg-white);
     direction: rtl;
     border: 0.5px solid var(--border-grey);
     box-shadow: var(--card-shadow-2);
     overflow: hidden;
+    min-width: min(calc(100% - 4px),260px);
+    height: calc(100% - 20px);
+    max-width: 567px;
+    width: calc(100% - 32px);
     &_link{
         color: inherit;
         text-decoration: none;
@@ -78,5 +84,5 @@
         padding: 20px 16px 16px 16px;
         direction: rtl;
     }
-}
+}}
 
