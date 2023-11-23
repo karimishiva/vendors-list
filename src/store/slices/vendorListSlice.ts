@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { VendorsListState } from "src/types/types";
+import { VendorsListState, VendorsT } from "src/types/types";
 import { vendorsApi } from "../apis/vendorsApi";
 
 const initialState = {
   vendors: [],
-  page: 1,
+  page: 0,
   page_size: 10,
   lat: 35.754,
   long: 51.328,
@@ -30,9 +30,12 @@ const vendorsListSlice = createSlice({
   extraReducers: (builder) => {
     builder.addMatcher(
       vendorsApi.endpoints.fetchVendors.matchFulfilled,
-      (state, { payload }) => {
-        console.log("payload", payload?.data?.finalResult);
-        state.vendors = payload?.data?.finalResult;
+      (state: VendorsListState, { payload }) => {
+        const temp: VendorsT[] = [
+          ...state.vendors,
+          ...payload.data.finalResult,
+        ];
+        state.vendors = temp;
       }
     );
   },

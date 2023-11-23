@@ -19,5 +19,5 @@ const vendorsApi = createApi({
   },
 });
 
-export const { useFetchVendorsQuery } = vendorsApi;
+export const { useFetchVendorsQuery, useLazyFetchVendorsQuery } = vendorsApi;
 export { vendorsApi };

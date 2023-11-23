@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { VendorsListState } from "src/types/types";
 import { useSelector } from "react-redux";
-import { useFetchVendorsQuery } from "src/store";
+import { useLazyFetchVendorsQuery } from "src/store/apis/vendorsApi";
 function useVendors() {
   const { page, lat, long, vendors } = useSelector(
     (state: { vendorsList: VendorsListState }) => {
@@ -13,16 +13,16 @@ function useVendors() {
       };
     }
   );
-  const { data, refetch } = useFetchVendorsQuery({
-    page: page,
-    page_size: 10,
-    lat: 35.754,
-    long: 51.328,
-  });
-
+  const [getData, data] = useLazyFetchVendorsQuery();
   useEffect(() => {
-    refetch();
-  }, [page, lat, long, refetch]);
+    page != 0 &&
+      getData({
+        page: page,
+        page_size: 10,
+        lat: 35.754,
+        long: 51.328,
+      });
+  }, [page, lat, long]);
 
   return {
     data,

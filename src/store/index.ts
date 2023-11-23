@@ -6,7 +6,7 @@ import {
   changePageSize,
   changeGeoLocation,
   changePage,
-} from "./slices/vendorList";
+} from "./slices/vendorListSlice";
 
 export const store = configureStore({
   reducer: {
