@@ -1,8 +1,8 @@
 # Vendors List
 
-[Build status badge]
-
-This is a project that I developed for the Snapp food! code challenge. It is a React.js application that renders a list of vendors using virtual list. It uses the following technologies:
+This is a project that I developed for the Snapp food! code challenge. It is a React.js application that renders a list of vendors using virtual list.
+You can see the [live demo](https://vendors-list-sigma.vercel.app/), which is powered by Vercel.
+It uses the following technologies:
 
 - [Vite](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/): A fast and lightweight frontend tooling that provides a smooth developer experience.
 - [TypeScript](https://github.com/lucas-mancini/react-app-readme-example): A superset of JavaScript that adds static type definitions and enables catching errors early.
