@@ -16,11 +16,9 @@ const VirtualList = ({
     <div key={index} style={style}>
       {isLastItem && data.length !== 0 ? (
         <InfinitScrool />
-      ) : (
-        data[index]?.type === "VENDOR" && (
-          <VendorCard vendor={data[index].data as VendorT} />
-        )
-      )}
+      ) : data[index]?.type === "VENDOR" ? (
+        <VendorCard vendor={data[index].data as VendorT} />
+      ) : null}
     </div>
   );
 };

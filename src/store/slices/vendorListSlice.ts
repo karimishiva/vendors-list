@@ -4,10 +4,10 @@ import { vendorsApi } from "../apis/vendorsApi";
 
 const initialState = {
   vendors: [],
-  page: 1,
+  page: 0,
   page_size: 10,
-  lat: 35.754,
-  long: 51.328,
+  lat: 35.774,
+  long: 51.418,
 };
 const vendorsListSlice = createSlice({
   name: "vendorsList",

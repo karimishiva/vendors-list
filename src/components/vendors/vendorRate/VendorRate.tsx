@@ -13,7 +13,9 @@ const VendorRate = ({ vendor }: { vendor: VendorT }) => {
   };
   return (
     <div className={c.vendorSurvey}>
-      <div className={c.vendorSurvey_count}>({vendor.voteCount})</div>
+      <div className={c.vendorSurvey_count}>
+        ({vendor.voteCount.toLocaleString()})
+      </div>
       <div
         className={c.vendorSurvey_rate}
         style={{

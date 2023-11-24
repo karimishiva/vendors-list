@@ -19,8 +19,8 @@ function useVendors() {
     getData({
       page: page,
       page_size: 10,
-      lat: 35.754,
-      long: 51.328,
+      lat: 35.774,
+      long: 51.418,
     });
   }, [page, lat, long]);
 

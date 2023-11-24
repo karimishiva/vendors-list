@@ -26,4 +26,8 @@ export interface VendorT {
   deliveryFee: number;
   best_coupon?: string;
   menuUrl: string;
+  isZFExpress: boolean;
+  discountValueForView: number;
+  has_cashback: boolean;
+  is_pro: boolean;
 }

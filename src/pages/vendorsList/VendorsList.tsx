@@ -1,6 +1,6 @@
 import c from "./vendorsList.module.scss";
 import AutoSizer from "react-virtualized-auto-sizer";
-import { FixedSizeList } from "react-window";
+import { VariableSizeList } from "react-window";
 import VirtualList from "src/components/virtualList/VirtualList";
 import useVendors from "src/hooks/useVendors";
 import clsx from "clsx";
@@ -35,16 +35,18 @@ const VendorsList = () => {
       ) : (
         <AutoSizer>
           {({ height, width }: { height: number; width: number }) => (
-            <FixedSizeList
+            <VariableSizeList
               width={width}
               height={height}
               itemCount={vendors.length + 1}
               direction='rtl'
-              itemSize={255}
+              itemSize={(index) =>
+                vendors[index]?.type === "VENDOR" ? 255 : 0
+              }
               itemData={vendors}
             >
               {VirtualList}
-            </FixedSizeList>
+            </VariableSizeList>
           )}
         </AutoSizer>
       )}
