@@ -16,15 +16,14 @@ const VendorsList = () => {
           !data?.data?.open_count && !data?.data?.count ? "skeleton" : ""
         )}
       >
-        {data?.data?.open_count ||
-          (data?.data?.count && (
-            <>
-              <h2>{`${data?.data?.count || data?.data?.open_count} فروشنده ی  ${
-                data?.data?.open_count ? "باز" : "بسته"
-              } `}</h2>
-              <BrandLogo height='36px' />
-            </>
-          ))}
+        {(data?.data?.open_count || data?.data?.count) && (
+          <>
+            <h2>{`${data?.data?.count || data?.data?.open_count} فروشنده ی  ${
+              data?.data?.open_count ? "باز" : "بسته"
+            } `}</h2>
+            <BrandLogo height='36px' />
+          </>
+        )}
       </div>
       {isLoading && vendors.length === 0 ? (
         <>
