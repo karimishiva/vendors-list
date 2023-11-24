@@ -1,30 +1,28 @@
-# React + TypeScript + Vite
+# Vendors List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Build status badge]
 
-Currently, two official plugins are available:
+This is a project that I developed for the Snapp food! code challenge. It is a React.js application that renders a list of vendors using virtual list. It uses the following technologies:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Vite](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/): A fast and lightweight frontend tooling that provides a smooth developer experience.
+- [TypeScript](https://github.com/lucas-mancini/react-app-readme-example): A superset of JavaScript that adds static type definitions and enables catching errors early.
+- [SCSS](https://github.com/facebook/react/blob/main/README.md): A CSS preprocessor that allows writing more maintainable and modular styles.
+- [Redux Toolkit](http://my-app.com): A toolkit that simplifies the development of Redux applications by providing utilities for common tasks such as creating actions, reducers, and selectors.
+- [React Router]: A library that enables routing and navigation for React applications.
+- [RTK Query]: A powerful data fetching and caching solution for Redux applications that eliminates the need to write any reducers or middleware.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Renders a list of vendors using virtual list
+- Pagination based on scrolling
+- RTK query for data fetching
+- Include a skeleton card loading animation until the data is fully loaded
+- Using BEM in SASS
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+To run this project locally, follow these steps:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Clone the repository: `git clone https://github.com/karimishiva/vendors-list.git`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
