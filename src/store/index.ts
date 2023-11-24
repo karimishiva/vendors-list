@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import { vendorsApi } from "./apis/vendorsApi";
+import { rtkQueryErrorLogger, vendorsApi } from "./apis/vendorsApi";
 import {
   vendorsListReducer,
   changePageSize,
@@ -14,7 +14,10 @@ export const store = configureStore({
     [vendorsApi.reducerPath]: vendorsApi.reducer,
   },
   middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware().concat(vendorsApi.middleware);
+    return getDefaultMiddleware().concat(
+      vendorsApi.middleware,
+      rtkQueryErrorLogger
+    );
   },
 });
 
