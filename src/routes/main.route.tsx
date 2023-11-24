@@ -1,16 +1,15 @@
 import MainLayout from "src/layout/MainLayout";
-import WellcomePage from "src/pages/wellcomePage/WellcomePage";
-import { createBrowserRouter } from "react-router-dom";
+import WelcomePage from "src/pages/welcomePage/WelcomePage";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import NotFound from "src/components/notFound/NotFound";
 import VendorsList from "src/pages/vendorsList/VendorsList";
 
 export const mainRouter = createBrowserRouter([
   {
     element: <MainLayout />,
-    errorElement: <NotFound />,
     children: [
       {
-        element: <WellcomePage />,
+        element: <WelcomePage />,
         path: "/",
       },
       {
@@ -18,5 +17,13 @@ export const mainRouter = createBrowserRouter([
         path: "/vendorsList",
       },
     ],
+  },
+  {
+    path: "/404",
+    element: <NotFound />,
+  },
+  {
+    path: "*",
+    element: <Navigate to={"/404"} replace />,
   },
 ]);

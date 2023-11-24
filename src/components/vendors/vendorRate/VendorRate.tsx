@@ -1,6 +1,6 @@
 import { StarIcon } from "src/assets/icons";
 import { VendorT } from "src/types/types";
-import c from "./vendorRate.module.scss";
+import classes from "./vendorRate.module.scss";
 
 const VendorRate = ({ vendor }: { vendor: VendorT }) => {
   const rateColor = (rate: number, type: string) => {
@@ -12,12 +12,12 @@ const VendorRate = ({ vendor }: { vendor: VendorT }) => {
       : `var(--bg-rate-${roundRate})`;
   };
   return (
-    <div className={c.vendorSurvey}>
-      <div className={c.vendorSurvey_count}>
+    <div className={classes.vendorSurvey}>
+      <div className={classes.vendorSurvey_count}>
         ({vendor.voteCount.toLocaleString()})
       </div>
       <div
-        className={c.vendorSurvey_rate}
+        className={classes.vendorSurvey_rate}
         style={{
           color: rateColor(vendor.rate, "color"),
           backgroundColor: rateColor(vendor.rate, "bg"),

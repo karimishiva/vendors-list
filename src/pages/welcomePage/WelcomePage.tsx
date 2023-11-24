@@ -1,18 +1,21 @@
 import { useNavigate } from "react-router-dom";
 import { BrandLogo } from "src/assets/icons";
 import Button from "src/components/button/Button";
-import c from "./wellcomePage.module.scss";
-const WellcomePage = () => {
+import classes from "./welcomePage.module.scss";
+const WelcomePage = () => {
   const navigate = useNavigate();
   return (
-    <main className={c.wellcomePageMain}>
+    <main className={classes.wellcomePageMain}>
       <BrandLogo />
       <p>برای رفتن به صفحه ی اصلی روی دکمه زیر کلیک کنید.</p>
-      <Button onClickFn={() => navigate("/vendorsList")} className={c.linkBtn}>
+      <Button
+        onClickFn={() => navigate("/vendorsList")}
+        className={classes.linkBtn}
+      >
         لیست رستوران ها
       </Button>
     </main>
   );
 };
 
-export default WellcomePage;
+export default WelcomePage;

@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { changePage } from "src/store";
 import VendorLoading from "./VendorLoading";
 import { useDispatch } from "react-redux";
-const InfinitScrool = () => {
+const InfinitScroll = () => {
   const loadingRef = useRef(null);
   const dispatch = useDispatch();
 
@@ -19,11 +19,7 @@ const InfinitScrool = () => {
       loadingRef.current && observer.unobserve(loadingRef.current);
     };
   }, [loadingRef]);
-  return (
-    <div>
-      <VendorLoading ref={loadingRef} />
-    </div>
-  );
+  return <VendorLoading ref={loadingRef} />;
 };
 
-export default InfinitScrool;
+export default InfinitScroll;

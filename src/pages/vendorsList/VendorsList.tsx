@@ -1,4 +1,4 @@
-import c from "./vendorsList.module.scss";
+import classes from "./vendorsList.module.scss";
 import AutoSizer from "react-virtualized-auto-sizer";
 import { VariableSizeList } from "react-window";
 import VirtualList from "src/components/virtualList/VirtualList";
@@ -9,10 +9,10 @@ import VendorLoading from "src/components/vendors/vendorLoading/VendorLoading";
 const VendorsList = () => {
   const { vendors, isLoading, data } = useVendors();
   return (
-    <main className={c.vendorsList}>
+    <main className={classes.vendorsList}>
       <div
         className={clsx(
-          c.vendorsList_openVendors,
+          classes.vendorsList_openVendors,
           !data?.data?.open_count && !data?.data?.count ? "skeleton" : ""
         )}
       >
@@ -40,7 +40,7 @@ const VendorsList = () => {
               itemCount={vendors.length + 1}
               direction='rtl'
               itemSize={(index) =>
-                vendors[index]?.type === "VENDOR" ? 255 : 0
+                vendors[index]?.type === "VENDOR" ? 260 : 0
               }
               itemData={vendors}
             >

@@ -1,0 +1,31 @@
+@import 'src/assets/styles/mixin.scss';
+
+.card_coupon{
+    position: absolute;
+    top: 8px;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    &_info{
+        @include flexCenter(row,4px,flex-start,center);
+        position: relative;
+        font-size: var(--text-xSmall);
+        font-weight: var(--font-medium);
+        width: fit-content;
+        height: 24px;
+        border-radius: 16px 0 0 16px;
+        padding: 4px 8px;
+        overflow: hidden;
+        margin-top: 5px;
+        background-color: var(--bg-white);
+    }
+    &_default{
+        color: var(--text-green);
+    }
+    &_pro{
+        color:var(--text-pink) ;
+    }
+}

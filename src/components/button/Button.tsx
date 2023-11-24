@@ -1,4 +1,4 @@
-import c from "./Button.module.scss";
+import classes from "./Button.module.scss";
 import clsx from "clsx";
 type propType = {
   children: React.ReactNode;
@@ -8,7 +8,7 @@ type propType = {
 const Button = ({ children, onClickFn, className, ...rest }: propType) => {
   return (
     <button
-      className={clsx(c.mainBtnStyle, className)}
+      className={clsx(classes.mainBtnStyle, className)}
       onClick={onClickFn}
       {...rest}
     >
